@@ -1,0 +1,166 @@
+{
+  "id": "preview",
+  "name": "Workflow Preview",
+  "nodes": [
+    {
+      "id": "f-w08yOHku9JCJXzxxP30",
+      "type": "start",
+      "position": {
+        "x": 288,
+        "y": -160
+      },
+      "data": {
+        "label": "Start",
+        "config": {
+          "triggerType": "scheduled",
+          "cronExpression": "Every Monday at 9:00 AM"
+        }
+      },
+      "measured": {
+        "width": 180,
+        "height": 70
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "caoneXFxUgdwDQ1L7G9z2",
+      "type": "task",
+      "position": {
+        "x": 288,
+        "y": -64
+      },
+      "data": {
+        "label": "Task",
+        "config": {
+          "label": "HR verification",
+          "assignee": "kmalleswari598@gmail.com",
+          "dueInDays": 1,
+          "priority": "high",
+          "description": "HR Verification"
+        }
+      },
+      "measured": {
+        "width": 193,
+        "height": 106
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "EFTjb1TbM_KSzZqEfjG_o",
+      "type": "approval",
+      "position": {
+        "x": 288,
+        "y": 80
+      },
+      "data": {
+        "label": "Approval",
+        "config": {
+          "label": "HR Approval",
+          "approvers": [],
+          "approvalType": "any",
+          "timeoutDays": 1,
+          "onTimeout": "escalate"
+        }
+      },
+      "measured": {
+        "width": 180,
+        "height": 70
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "ejnRNslFs4ZKkR8KvqpoO",
+      "type": "automated",
+      "position": {
+        "x": 288,
+        "y": 192
+      },
+      "data": {
+        "label": "Automated Step",
+        "config": {
+          "label": "Automated Step",
+          "actionId": "send-email",
+          "params": {
+            "to": "kmalleswari598@gmail.com",
+            "subject": "HR Verification",
+            "template": "approval-request"
+          }
+        }
+      },
+      "measured": {
+        "width": 180,
+        "height": 71
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "bfDh2e9RYAXH_WvC3BafT",
+      "type": "end",
+      "position": {
+        "x": 288,
+        "y": 320
+      },
+      "data": {
+        "label": "End",
+        "config": {
+          "outcome": "completed",
+          "notifyInitiator": true
+        }
+      },
+      "measured": {
+        "width": 180,
+        "height": 88
+      },
+      "selected": true,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#94a3b8"
+      },
+      "source": "f-w08yOHku9JCJXzxxP30",
+      "target": "caoneXFxUgdwDQ1L7G9z2",
+      "id": "ZAncRilxCqSNTLRgdRHtY"
+    },
+    {
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#94a3b8"
+      },
+      "source": "caoneXFxUgdwDQ1L7G9z2",
+      "target": "EFTjb1TbM_KSzZqEfjG_o",
+      "id": "L_M7a9q9WEAztzzNIy3Wm"
+    },
+    {
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#94a3b8"
+      },
+      "source": "EFTjb1TbM_KSzZqEfjG_o",
+      "target": "ejnRNslFs4ZKkR8KvqpoO",
+      "id": "2q4P0M2ajQHH4Tkz4Y2z9"
+    },
+    {
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#94a3b8"
+      },
+      "source": "ejnRNslFs4ZKkR8KvqpoO",
+      "target": "bfDh2e9RYAXH_WvC3BafT",
+      "id": "pN_qVAtDEBENLYfpgY797"
+    }
+  ],
+  "createdAt": "2026-04-23T13:17:20.465Z",
+  "updatedAt": "2026-04-23T13:17:20.465Z"
+}
